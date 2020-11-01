@@ -1,0 +1,147 @@
+<!--  Title: Ninja Cat HTML
+ Programmer: Zihan Teng,Yi Zhong,Mingrong Sun ----- Ninja cat
+ Date: May 2020
+ Description: This is html Canvas file of the Game
+ version 1.0(standard) -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ninja Cat</title>
+	<style>
+		#canvas{
+			display:none;
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+		}
+		#home{
+			display:block;
+			background: url(./img/home.jpg);
+			width:340px;
+			height:453px;
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+		}
+		#credit{
+			display:none;
+			background-color: black;
+			width:340px;
+			height:453px;
+			background-color:rgba(0,0,0,0.5);
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			z-index:10
+		}
+		#credit>div{
+			text-align: center;
+			position: relative;
+			background: url(./img/credit.png);
+			color:black;
+			height:320px;
+			margin-top: 50px;
+		}
+		#title {
+			position: absolute;
+			top: 55px;
+			left: 80px;
+		}
+		#displayScore {
+			position: absolute;
+			top: 125px;
+			left: 138px;
+		}
+		#restart {
+			height: 25px;
+			width: 25px;
+			position: absolute;
+			top: 285px;
+			left: 163px;
+			cursor: pointer;
+		}
+		.rankDiv {
+			position: absolute;
+			top: 195px;
+			left: 100px;
+			vertical-align: center;
+		}
+		#easyLevel{
+			width: 65%;
+			height: 30%;
+			margin-top: 0;
+			margin-left: 19%;
+			cursor: pointer;
+		}
+		#mediumLevel{
+			width: 65%;
+			height: 30%;
+			margin-left: 19%;
+			cursor: pointer;
+		}
+		#Hometitle{
+			width: 65%;
+			height: 30%;
+			margin-top: auto;
+			margin-left: 21%;
+		}
+		#Hometitle2{
+			width:25%;
+			height: 35%;
+			margin-top: 5%;
+			margin-left: 39%;
+		}
+		#music{
+			width: 16%;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<!-- MingRong sun -->
+	<!-- start page -->
+	<div id="home">
+		<div>
+			<audio id="music" src="music/bgm.mp3" preload></audio>
+			<img src="img/music.png" id="music" onclick="play()" >
+		</div>
+		<div>
+			<img src="img/title.png" id="Hometitle">
+		</div>
+		<div>
+			<img src="img/cat3.png" id="Hometitle2">
+		</div>
+		<div onclick="startGame()">
+			<img src="img/easyLevel.png" id="easyLevel" onclick="easy()">
+			<img src="img/mediumLevel.png" id="mediumLevel" onclick="medium()">
+		</div>
+
+	</div>
+	<!-- Zihan Teng -->
+	<!-- credit page -->
+	<div id="credit">
+		<div>
+			<h2 id="title">Congratulations</h2>
+			<h3 id="displayScore">Score</h3>
+			<div class="rankDiv">
+				<img src="./img/rank.png" alt="" width="45px" height="45px" style="vertical-align: middle;">
+				<span id="rankDisplay" style="vertical-align: center;line-height: 45px;font-size: 18px;font-weight: bold;"></span>
+			</div>
+			<div onclick="restart()" id="restart"></div>
+		</div>
+	</div>
+	<!-- Yi Zhong -->
+	<!-- play stage -->
+	<canvas id="canvas" width="340" height="453" style="border:2px solid #000;background:#fff;"></canvas>
+	<script src="play.js" type="text/javascript"></script>
+	<!-- Zihan Teng -->
+	<!-- sound file -->
+	<audio src="./img/death.wav" id="deathMusic" preload></audio>
+	<audio src="./music/jump.mp3"id="jump" preload>
+</body>
+</html>
